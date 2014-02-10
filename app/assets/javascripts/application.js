@@ -10,7 +10,15 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require bootstrap
 //= require jquery
+//= require bootstrap
 //= require jquery_ujs
+//= require jquery.ui.all
 //= require turbolinks
 //= require_tree .
+
+// jquery datepicker - used in coordinator edit applicant form 
+$(function() {
+	$("input#intern_graduation_date").datepicker({dateFormat: 'M yy'});
+});

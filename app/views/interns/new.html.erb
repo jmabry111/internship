@@ -1,5 +1,142 @@
-<div class="row">
-	<div class="col-lg-6 text-center">
-		<p>This is the first page</p>
+<div class="container">
+	<div class="row">
+		<div class="col-md-10">
+			<h2>2014 New College Institute Spring Internship Application</h2>
+		</div>
 	</div>
-</div>
+	<br />
+	<div class="row">
+		<div class="col-md-8">
+			<p class="text-justify lead">
+				The deadline to apply is February 3, 2014. You must complete all fields of information. Incomplete applications will not be considered for selection. You cannot begin an application and save it. You must complete the application at one time. It is imperative for the NCI Internship Selection Committee to review a complete application. Please note that you MUST have a proposed employer with which you are applying for the 2014 Spring NCI Internship Program. Applications without an employer statement of commitment from the prospective employer will not be considered for selection. If you have any questions, please contact <a href="mailto:kcroft@newcollegeinstitute.org">Katie Croft</a> at kcroft@newcollegeinstitute.org.
+			</p>
+		</div>
+	</div>
+	<br />
+	<%= simple_form_for @intern do |intern| %>
+		<%= render 'shared/error_messages', object: intern.object %>
+		<div class="row">
+			<div class="col-md-4">
+				<%= intern.input :first_name %>
+			</div>
+			<div class="col-md-4 col-md-offset-1">
+				<%= intern.input :last_name %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-5">
+				<%= intern.input :email %>
+			</div>
+			<div class="col-md-4">
+				<small><strong>* NCI will communicate frequently with interns and prospective interns via email. Please provide your own permanent email address, not a school/student email or a parent's email address.</strong></small>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-8">
+				<%= intern.input :street %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-5">
+				<%= intern.input :city %>
+			</div>
+			<div class="col-md-1 col-md-offset-1">
+				<%= intern.input :state %>
+			</div>
+			<div class="col-md-1 col-md-offset-1">
+				<%= intern.input :zip %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<%= intern.input :primary_phone, :placeholder => "555-555-1212" %>
+			</div>
+			<div class="col-md-4 col-md-offset-1">
+				<%= intern.input :alternate_phone, :placeholder => "555-555-1212" %>
+			</div>
+		</div>
+		<hr />
+		<div class="row">
+			<div class="col-md-6">
+				<%= intern.input :current_school, :label => "College/University Currently Enrolled" %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<%= intern.input :major %>
+			</div>
+			<div class="col-md-2 col-md-offset-1">
+				<%= intern.input :graduation_date, :as => :string %>
+			</div>
+		</div>
+		<hr />
+		<div class="row">
+			<div class="col-md-6">
+				<%= intern.input :employer_name, :label => "Proposed Employer's Company Name" %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<%= intern.input :employer_phone, :placeholder => "555-555-1212" %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<%= intern.input :supervisor_name %>
+			</div>
+			<div class="col-md-4 col-md-offset-1">
+				<%= intern.input :supervisor_email %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-8">
+				<%= intern.input :supervisor_street, :label => "Supervisor Address" %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-5">
+				<%= intern.input :supervisor_city, :label => "City" %>
+			</div>
+			<div class="col-md-1 col-md-offset-1">
+				<%= intern.input :supervisor_state, :label => "State" %>
+			</div>
+			<div class="col-md-1 col-md-offset-1">
+				<%= intern.input :supervisor_zip, :label => "Zip" %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-8">
+				<%= intern.input :internship_description, :as => :text %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-8">
+				<%= intern.input :internship_benefits, :as => :text, :label => "How will your proposed internship benefit Martinsville/Henry County?" %>
+			</div>
+		</div>		
+		<div class="row">
+			<div class="col-md-8">
+				<%= intern.input :personal_goals, :as => :text, :label => "What personal goals do you plan to accomplish through the NCI Internship Program?" %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<%= intern.input :transportation_available, :collection => ["Yes", "No"], :as => :radio_buttons, :label => "Will you have reliable transportation during the proposed NCI internship season?", :item_wrapper_class => "radio-inline" %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-8">
+				<%= intern.input :relational_affiliation, :label => false, :inline_label => "By checking this box and submitting my application, I attest that I have no relational affiliation with my direct supervisor or members of the board of directors or any other bodies of authority within the business or organization if I potentially participate within the New College Institute Internship Program. By submitting this application, I also attest that I have no relational affiliation with the New College Institute Internship staff." %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-8">
+				<%= intern.input :terms_of_internship, :label => false, :inline_label => "By checking this box, I acknowledge that I have read and agree to the terms of the 2014 Spring Intern Participation Agreement." %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<%= intern.submit "Submit application", class: "btn btn-large" %>
+			</div>
+		</div>
+	<% end %>

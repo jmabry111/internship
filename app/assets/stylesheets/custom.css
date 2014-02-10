@@ -1,0 +1,12 @@
+footer{
+	margin-top:45px;
+	padding-top:5px;
+	border-top:1px solid #eaeaea;
+	color:#696969;
+	a{
+		color:#696969;
+		&:hover{
+			color:#2F4F4F;
+		}
+	}
+}

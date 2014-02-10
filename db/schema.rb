@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140207211726) do
+ActiveRecord::Schema.define(version: 20140210161131) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,22 @@ ActiveRecord::Schema.define(version: 20140207211726) do
     t.string   "current_school"
     t.string   "major"
     t.date     "graduation_date"
+    t.string   "email"
+    t.string   "employer_name"
+    t.string   "internship_title"
+    t.string   "employer_phone"
+    t.string   "supervisor_name"
+    t.string   "supervisor_email"
+    t.string   "supervisor_street"
+    t.string   "supervisor_city"
+    t.string   "supervisor_state"
+    t.string   "supervisor_zip"
+    t.text     "internship_description"
+    t.boolean  "transportation_available"
+    t.text     "personal_goals"
+    t.text     "internship_benefits"
+    t.boolean  "relational_affiliation"
+    t.boolean  "terms_of_internship"
   end
 
 end
